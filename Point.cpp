@@ -3,10 +3,11 @@
 #include <string>
 
 
-Point::Point(double *xCoord, double *yCoord)
+Point::Point(double *xCoord, double *yCoord, int pointCount)
 {
     this -> xCoord = xCoord;
     this -> yCoord = yCoord;
+    this -> pointCount = pointCount;
 }
 
 std::string Point::getType()

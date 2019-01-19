@@ -5,7 +5,7 @@
 class Point : public Shape
 {
     public:
-    Point(double *xCoord, double *yCoord);
+    Point(double *xCoord, double *yCoord, int pointCount);
     std::string getType();
     ObjectPosition position();
     

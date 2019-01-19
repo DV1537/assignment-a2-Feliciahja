@@ -71,7 +71,7 @@ int main(int argc, const char * argv[])
     if(numCoords > 6)
     {
         if(numCoords % 2 == 0)
-        {    
+        {   
             int vertices = (numCoords / 2);
             Polygon polygon(xCoord, yCoord, vertices);
             double area = polygon.area();
@@ -81,19 +81,22 @@ int main(int argc, const char * argv[])
     }
     else if(numCoords == 6)
     {
-        Triangle triangle(xCoord, yCoord);
+        int vertices = (numCoords / 2);
+        Triangle triangle(xCoord, yCoord, vertices);
         double area = triangle.area();
         double roundedArea = round(area * 1000) / 1000.0;
         std::cout << roundedArea;
     }
     else if(numCoords == 4)
     {
-        Line line(xCoord, yCoord);
+        int vertices = (numCoords / 2);
+        Line line(xCoord, yCoord, vertices);
         std::cout << line.area();
     }
     else if(numCoords == 2) 
     {
-        Point point(xCoord, yCoord);
+        int vertices = (numCoords / 2);
+        Point point(xCoord, yCoord, vertices);
         std::cout << point.area();
     }
     else
