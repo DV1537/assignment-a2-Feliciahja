@@ -66,14 +66,15 @@ int main(int argc, const char * argv[])
         else
             yCoord[coordIndex] = vertices[count];
     }
-
+    
+    int pointCount = (numCoords / 2);
 //Determining the shape by comparing the number of coords read in from file
     if(numCoords > 6)
     {
         if(numCoords % 2 == 0)
         {   
-            int vertices = (numCoords / 2);
-            Polygon polygon(xCoord, yCoord, vertices);
+            
+            Polygon polygon(xCoord, yCoord, pointCount);
             double area = polygon.area();
             double roundedArea = round(area * 1000) / 1000.0;
             std::cout << roundedArea;
@@ -81,22 +82,22 @@ int main(int argc, const char * argv[])
     }
     else if(numCoords == 6)
     {
-        int vertices = (numCoords / 2);
-        Triangle triangle(xCoord, yCoord, vertices);
+        //int vertices = (numCoords / 2);
+        Triangle triangle(xCoord, yCoord, pointCount);
         double area = triangle.area();
         double roundedArea = round(area * 1000) / 1000.0;
         std::cout << roundedArea;
     }
     else if(numCoords == 4)
     {
-        int vertices = (numCoords / 2);
-        Line line(xCoord, yCoord, vertices);
+        //int vertices = (numCoords / 2);
+        Line line(xCoord, yCoord, pointCount);
         std::cout << line.area();
     }
     else if(numCoords == 2) 
     {
-        int vertices = (numCoords / 2);
-        Point point(xCoord, yCoord, vertices);
+        //int vertices = (numCoords / 2);
+        Point point(xCoord, yCoord, pointCount);
         std::cout << point.area();
     }
     else
